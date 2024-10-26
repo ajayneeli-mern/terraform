@@ -1,0 +1,27 @@
+steps:
+  # Step 1: Initialize Terraform
+  - name: "hashicorp/terraform:light"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        terraform init
+
+  # Step 2: Run Terraform Plan
+  - name: "hashicorp/terraform:light"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        terraform plan -out=tfplan
+
+  # Step 3: Apply the Terraform Plan
+  - name: "hashicorp/terraform:light"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        terraform apply -input=false tfplan
+
+# Set the build timeout (optional)
+timeout: "1200s"
