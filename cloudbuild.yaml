@@ -23,5 +23,9 @@ steps:
       - |
         terraform apply -input=false tfplan
 
+#cloud-build-logs-bucket01
+# Set the logging bucket
+logsBucket: "gs://cloud-build-logs-bucket01"
+
 # Set the build timeout (optional)
 timeout: "1200s"
