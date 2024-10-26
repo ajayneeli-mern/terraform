@@ -4,7 +4,6 @@ provider "google" {
   region  = "us-central1"
 }
 
-
 # Resource: GCS Bucket
 resource "google_storage_bucket" "gcs_bucket" {
   name     = "Terraform_bucket01"
